@@ -29,68 +29,76 @@ Before using this script, make sure you have the following installed:
    ```bash
    git clone https://github.com/yourusername/video-speed-converter.git
 
-Make the script executable:
-chmod +x convert_video.sh
+2. Make the script executable:
+   ```bash
+   chmod +x convert_video.sh
 
 
-UsageBasic syntax:./convert_video.sh <input_video> [speed_factor]
-Examples:# Convert video to MP4 at normal speed
-./convert_video.sh input.mov
+## Usage: 
+Basic syntax: `./convert_video.sh <input_video> [speed_factor]`
 
-# Convert video to MP4 at 2x speed
-./convert_video.sh input.mp4 2
+## Examples:
+### Convert video to MP4 at normal speed
+`./convert_video.sh input.mov`
 
-# Convert video to MP4 at half speed
-./convert_video.sh input.avi 0.5
-Parameters
-input_video: Path to the input video file (supports various formats like .mov, .mp4, .avi, etc.)
-speed_factor (optional):
+### Convert video to MP4 at 2x speed
+`./convert_video.sh input.mp4 2`
 
-Default: 1 (normal speed)
-Values > 1: Faster playback (e.g., 2 for double speed)
-Values < 1: Slower playback (e.g., 0.5 for half speed)
+### Convert video to MP4 at half speed
+`./convert_video.sh input.avi 0.5`
+
+## Parameters
+- input_video: Path to the input video file (supports various formats like .mov, .mp4, .avi, etc.)
+- speed_factor (optional):
+
+  - Default: 1 (normal speed)
+  - Values > 1: Faster playback (e.g., 2 for double speed)
+  - Values < 1: Slower playback (e.g., 0.5 for half speed)
 
 
-Output
+
+## Output
 The script will create an MP4 file in the same directory as the input file
-Output filename format:
 
-For normal speed: <original_name>.mp4
-For modified speed: <original_name>_<speed>x.mp4
+### Output filename format:
+
+- For normal speed: `<original_name>.mp4`
+- For modified speed: `<original_name>_<speed>x.mp4`
 
 
-How It Works
+## How It Works
 The script first validates the input parameters and file existence
 It calculates the necessary speed adjustment factors
 Uses ffmpeg to:
 
-Convert the video to MP4 format
-Adjust video speed using the setpts filter
-Adjust audio speed using the atempo filter
-Maintain video quality using -q:v 0 parameter
+- Convert the video to MP4 format
+- Adjust video speed using the setpts filter
+- Adjust audio speed using the atempo filter
+- Maintain video quality using -q:v 0 parameter
 
 
-Known Limitations
-Maximum speed factor might be limited by ffmpeg's capabilities
-For very large speed factors (>2.0), audio quality might be affected
-Some exotic video formats might not be supported (depends on ffmpeg installation)
-Troubleshooting
+## Known Limitations
+- Maximum speed factor might be limited by ffmpeg's capabilities
+- For very large speed factors (>2.0), audio quality might be affected
+- Some exotic video formats might not be supported (depends on ffmpeg installation)
 
-"Command not found" error
+## Troubleshooting
+
+### "Command not found" error
 
 Make sure the script has execute permissions
 Verify that ffmpeg is installed and in your PATH
 
 
 
-"Input file not found" error
+### "Input file not found" error
 
 Check if the file path is correct
 Ensure you have read permissions for the input file
 
 
 
-"Conversion failed" error
+### "Conversion failed" error
 
 Check if you have write permissions in the output directory
 Verify that the input file is a valid video file
