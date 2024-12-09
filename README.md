@@ -27,13 +27,13 @@ Before using this script, make sure you have the following installed:
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/video-speed-converter.git
+   git clone https://github.com/mifwar/convert-to-mp4.git 
+   ```
 
 2. Make the script executable:
    ```bash
    chmod +x convert_video.sh
-
-
+   ```
 ## Usage: 
 Basic syntax: `./convert_video.sh <input_video> [speed_factor]`
 
