@@ -17,10 +17,9 @@ Before using this script, make sure you have the following installed:
   - Mac: `brew install ffmpeg`
   - Ubuntu/Debian: `sudo apt-get install ffmpeg`
   - CentOS/RHEL: `sudo yum install ffmpeg`
-- **zsh**: Z shell (the script uses zsh as interpreter)
-  - Mac: Comes pre-installed
-  - Ubuntu/Debian: `sudo apt-get install zsh`
-  - CentOS/RHEL: `sudo yum install zsh`
+
+> For Centos/RHEL, you need to enable RPMFusion and EPEL. Read more https://rpmfusion.org/Configuration
+
 - **awk**: Should be pre-installed on most Unix-like systems
 
 ## Installation
@@ -89,7 +88,25 @@ Uses ffmpeg to:
 Make sure the script has execute permissions
 Verify that ffmpeg is installed and in your PATH
 
+### Black screen video output
 
+This usually happen because the required video codec is not fully compatible.
+For instance, in Centos if we use `ffmpeg-free` it will be able to convert
+the video to MP4 but you'll notice output has audio but with only black screen.
+
+If this happen, try check whether you're using `ffmpeg` or `ffmpeg-free` by 
+using this command
+
+```sh
+rpm -qa | grep ffmpeg
+```
+
+If you found that you're using `ffmpeg-free` then, you can replace it with 
+`ffmpeg` instead.
+
+```sh
+sudo dnf install ffmpeg --allowerasing
+```
 
 ### "Input file not found" error
 
