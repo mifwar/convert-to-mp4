@@ -108,6 +108,9 @@ If you found that you're using `ffmpeg-free` then, you can replace it with
 sudo dnf install ffmpeg --allowerasing
 ```
 
+Do consult to your respective distro on how to install required codec
+for MP4.
+
 ### "Input file not found" error
 
 Check if the file path is correct
