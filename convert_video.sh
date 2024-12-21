@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/sh
 
 # Function to print usage
 print_usage() {
